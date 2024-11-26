@@ -1,9 +1,14 @@
 document.querySelector('.contact').addEventListener('click',handleContactLink)
 function handleContactLink(){
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-   if(mobileCheck){
-    document.querySelector('.contact').setAttribute('href','tel:+919001155788')
-   }
+    if (isMobile) {
+      document.querySelector('.contact').setAttribute('href','tel:+919001155788')
+    } else {
+        document.querySelector('.contact').setAttribute('href','mailto:anantmann9057@gmail.com')
+
+    }
+   
 }
 
 window.mobileCheck = function() {
